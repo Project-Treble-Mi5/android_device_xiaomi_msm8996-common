@@ -55,6 +55,8 @@ on fs
 
     mount_all /vendor/etc/fstab.qcom
 
+    mount none /vendor/etc/sensors/sensor_def_qcomdev.conf /system/etc/sensors/sensor_def_qcomdev.conf bind
+
     # Set permissions for persist partition
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
