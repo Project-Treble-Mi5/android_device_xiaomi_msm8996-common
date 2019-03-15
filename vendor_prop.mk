@@ -175,3 +175,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # VNDK
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vndk.version=28
+
+# Dalvik VM
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=768m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m

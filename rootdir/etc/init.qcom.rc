@@ -302,8 +302,6 @@ on boot
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on property:sys.boot_completed=1
-    start init_msm8996
-
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.qcom
 
@@ -509,13 +507,6 @@ service readmac /vendor/bin/readmac
     user system
     group system net_raw
     oneshot
-
-service init_msm8996 /vendor/bin/init_msm8996
-    class core
-    user system
-    group system
-    writepid /dev/cpuset/system-background/tasks
-    disabled
 
 service thermal-engine /vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/vendor/etc/thermal-engine-8996.conf}
     class main
